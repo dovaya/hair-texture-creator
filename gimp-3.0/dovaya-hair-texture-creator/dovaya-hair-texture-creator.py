@@ -156,10 +156,6 @@ class DovayaHairTextureCreator(Gimp.PlugIn):
 
         with open(log_path, "a") as log:
             try:
-
-                # if Gio.Cancellable.get_current() is not None:
-                #     log.write("has cancellable")
-
                 # get dimensions of image
                 image_width = image.get_width()
                 image_height = image.get_height()
@@ -176,9 +172,6 @@ class DovayaHairTextureCreator(Gimp.PlugIn):
                     "standard::*",
                     Gio.FileQueryInfoFlags.NONE,
                     None,
-                    # "standard::*",
-                    # Gio.FileQueryInfoFlags.NONE,
-                    # cancellable,
                 )
 
                 Gimp.progress_init(
@@ -187,15 +180,7 @@ class DovayaHairTextureCreator(Gimp.PlugIn):
                 log.write("Processing textures in '" + textures_folder_path + "'...\n")
 
                 # process original textures
-                # while True and not cancellable.is_cancelled():
                 while True:
-                    # handle user canceling
-                    # if cancellable.is_cancelled():
-                    #     log.write("Cancelled!")
-                    #     return procedure.new_return_values(
-                    #         Gimp.PDBStatusType.CANCEL, GLib.Error()
-                    #     )
-
                     status = None
                     texture_file_info = None
                     texture_file = None
@@ -320,12 +305,6 @@ class DovayaHairTextureCreator(Gimp.PlugIn):
 
                 Gimp.progress_end()
 
-                # if cancellable.is_cancelled():
-                #     log.write("Cancelled!")
-                #     return procedure.new_return_values(
-                #         Gimp.PDBStatusType.CANCEL, GLib.Error()
-                #     )
-
                 log.write("Processed textures in '" + textures_folder_path + "'!\n")
 
                 return procedure.new_return_values(
@@ -397,7 +376,6 @@ class DovayaHairTextureCreator(Gimp.PlugIn):
 
         if use_selection:
             if not Gimp.Selection.is_empty(image):
-                # layer_resource.get_id()
                 layer_resource.edit_clear()
                 Gimp.Selection.invert(image)
                 layer_resource_copy.edit_clear()

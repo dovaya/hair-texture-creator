@@ -8,7 +8,7 @@ These folders contain several Python scripts and plugins that I wrote to create 
 
 The goal of these scripts and plugins is to automatise tedious tasks such as transferring alpha masks between layers and exporting the textures to DDS.
 
-![Feature](assets/explanation-feature.png)
+![Feature](assets/explanation-feature.webp)
 
 ### GIMP 2.10 (Legacy)
 

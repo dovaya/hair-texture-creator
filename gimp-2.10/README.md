@@ -40,7 +40,7 @@ For a lot of textures, this will be enough, namely when all the hair texture par
 
 In case some parts are misaligned, create a rotated version of your hair resource texture and use it with the `Dovaya_SaltAndWind_TransferSelectionToNewResource.py` or `Dovaya_SaltAndWind_TransferAlphaMask.py` to make your specified selection or the whole texture transfer its alpha mask to the new, rotated texture.
 
-![Feature](../assets/explanation-feature.png)
+![Feature](../assets/explanation-feature.webp)
 
 ### Dovaya_SaltAndWind_TransferAlphaMask.py
 
